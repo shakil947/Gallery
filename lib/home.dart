@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gallery/pages/about.dart';
 import 'package:gallery/pages/image.dart';
 
 import 'package:get/get.dart';
@@ -9,12 +10,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.red,
         title: Text(
           "Home Page",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
       ),
@@ -30,7 +34,7 @@ class Home extends StatelessWidget {
             Text(
               "YEASEEN  IT",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -38,13 +42,35 @@ class Home extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+              ),
               onPressed: () {
                 Get.to(MyImage());
               },
-              child: Text("Gallery"),
+              child: Text("Gallery Button"),
             ),
             SizedBox(
               height: 20,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+              ),
+              onPressed: () {
+                Get.to(ABOUT());
+              },
+              child: Text("About Button"),
             ),
           ],
         ),
